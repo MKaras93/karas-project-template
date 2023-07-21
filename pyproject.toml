@@ -8,6 +8,9 @@ packages = [{include = "karas_project_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^7.4.0"
+black = "^23.7.0"
+pre-commit = "^3.3.3"
 
 
 [build-system]
