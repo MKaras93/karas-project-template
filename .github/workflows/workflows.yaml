@@ -19,3 +19,5 @@ jobs:
           python -m poetry install -v --no-root --compile
       - name: Run tests with Pytest
         run: python -m poetry run pytest
+      - name: Run black
+        run: python -m poetry run black . --check
