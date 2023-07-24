@@ -1,9 +1,9 @@
 terraform {
   cloud {
-    organization = "example-org-db64c5"
+    organization = "your-organization-name"  # from terraform cloud
 
     workspaces {
-      name = "karas-project-template"
+      name = "your-workspace-name"  # from terraform cloud
     }
   }
 }
