@@ -27,3 +27,12 @@ set up, so instead of a reproducible infrastructure as a code, I have a few rand
 afraid to modify at this point.
 
 This is meant to be my remedy.
+
+# Getting started
+I usually use it with PyCharm and I do the following steps to start a new project from it:
+1. Go to `pyproject.toml` and in `[tool.poetry]` change the `name` to the name of your project.
+2. Create a new project interpreter using poetry (you will need poetry installed on your system - see
+https://python-poetry.org/docs/#installation for more information). The simplest way to create a poetry interpreter is
+to go to the `test_main.py` file and click the popup bar at the top "Set up a poetry environment using pyproject.toml".
+3. Create a new test configuration `pytest` and run it. There is one example test in the project - if it passed, you
+are setup correctly.

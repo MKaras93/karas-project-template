@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "karas-project-template"
+name = "karas-project-template"  # REPLACE WITH YOUR PROJECT NAME
 version = "0.1.0"
 description = ""
 authors = ["Michal Karas <mjkaras93@gmail.com>"]
 readme = "README.md"
-packages = [{include = "karas_project_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
