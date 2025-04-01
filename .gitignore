@@ -1,5 +1,6 @@
-# logs
-logs/
+# logs, outputs, temp files, temp inputs
+local/
+inputs/local/
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,intellij,windows,macos,linux,pycharm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,intellij,windows,macos,linux,pycharm+all
