@@ -8,6 +8,6 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 COPY . /app
 
 # Install dependencies using uv
-RUN uv sync --frozen
+RUN uv sync --frozen --extra dev
 
 CMD ["uv", "run", "python", "main.py"]

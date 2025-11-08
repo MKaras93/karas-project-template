@@ -17,8 +17,7 @@ install-uv-win:
 
 install-dependencies:
 	@which uv > /dev/null 2>&1 || (echo "Error: uv is not installed. Please run 'make install-uv-unix' (Linux/macOS) or 'make install-uv-win' (Windows)" && exit 1)
-	python3 -m pip install --upgrade pip
-	uv sync
+	uv sync --extra dev
 
 # example ssh access command - configure via .env file
 remote-ssh:
