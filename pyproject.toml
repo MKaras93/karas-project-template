@@ -1,17 +1,18 @@
-[tool.poetry]
+[project]
 name = "karas-project-template"  # REPLACE WITH YOUR PROJECT NAME
 version = "0.1.0"
 description = ""
-authors = ["Michal Karas <mjkaras93@gmail.com>"]
+authors = [
+    {name = "Michal Karas", email = "mjkaras93@gmail.com"}
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-pytest = "^7.4.0"
-black = "^23.7.0"
-pre-commit = "^3.3.3"
-
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=7.4.0",
+    "black>=23.7.0",
+    "pre-commit>=3.3.3",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

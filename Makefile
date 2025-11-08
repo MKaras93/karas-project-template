@@ -9,10 +9,16 @@ init-pre-commit:
 	pip3 install pre-commit
 	pre-commit install
 
+install-uv-unix:
+	curl -LsSf https://astral.sh/uv/install.sh | sh
+
+install-uv-win:
+	powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
 install-dependencies:
-	  python3 -m pip install --upgrade pip setuptools wheel
-	  python3 -m pip install poetry
-	  python3 -m poetry install -v --no-root --compile
+	@which uv > /dev/null 2>&1 || (echo "Error: uv is not installed. Please run 'make install-uv-unix' (Linux/macOS) or 'make install-uv-win' (Windows)" && exit 1)
+	python3 -m pip install --upgrade pip
+	uv sync
 
 # example ssh access command - configure via .env file
 remote-ssh:
