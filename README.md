@@ -9,6 +9,7 @@ The template includes:
 - GitHub CI running black and pytest on Push to GitHub
 - basic structure for terraform files
 - .gitignore with support for all of the above and some other common file patterns
+- pydantic-based settings manager loading the right settings based on 'env' in .env file
 
 Feel free to modify it for your needs. If you don't need some part, simply delete it. 
 

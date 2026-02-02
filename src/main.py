@@ -1,5 +1,8 @@
+from settings import settings
+
+
 def sum_numbers(a, b):
     return a + b
 
 
-print("test")
+print(settings.settings_type)
