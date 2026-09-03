@@ -5,8 +5,8 @@ The template includes:
 - uv as a dependency manager
 - tests file with a basic pytest test
 - docker-compose and Dockerfile for an image with dependencies installed via uv
-- pre-commit setup running black (code formatter)
-- GitHub CI running black and pytest on Push to GitHub
+- pre-commit setup running ruff (code formatter and linter)
+- GitHub CI running ruff and pytest on Push to GitHub
 - basic structure for terraform files
 - .gitignore with support for all of the above and some other common file patterns
 - pydantic-based settings manager loading the right settings based on 'env' in .env file
@@ -22,7 +22,7 @@ https://choosealicense.com/ for that.
 # But why?
 When I come up with a new idea, I want to get right to the fun part - the coding. I want to code, not deal
 with quirks of setting up a GitHub pipeline! So I code, and after a few weeks I have a few hundreds/thousands lines of
-code... and a terrible mess! Adding black at this point messes up commit history, and even thinking about adding
+code... and a terrible mess! Adding ruff at this point messes up commit history, and even thinking about adding
 tests gives me nightmares. Don't even get me started on cloud infrastructure - I didn't have Terraform
 set up, so instead of a reproducible infrastructure as a code, I have a few random machines on AWS, which I'm too
 afraid to modify at this point.

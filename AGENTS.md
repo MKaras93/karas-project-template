@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Python project template using **uv** (dependency manager), **black** (formatter), **pytest** (testing), **pydantic-settings** (config), Docker, and Terraform.
+Python project template using **uv** (dependency manager), **ruff** (formatter/linter), **pytest** (testing), **pydantic-settings** (config), Docker, and Terraform.
 
 ## Commands
 
@@ -11,8 +11,10 @@ Python project template using **uv** (dependency manager), **black** (formatter)
 | Install dependencies | `make install-dependencies` (runs `uv sync --extra dev`) |
 | Run all tests | `uv run pytest` |
 | Run a single test | `uv run pytest tests/test_main.py::TestExample::test_sum_numbers` |
-| Check formatting | `uv run black . --check` |
-| Auto-format | `uv run black .` |
+| Check formatting | `uv run ruff format --check .` |
+| Auto-format | `uv run ruff format .` |
+| Lint | `uv run ruff check .` |
+| Lint (auto-fix) | `uv run ruff check --fix .` |
 | Install pre-commit hooks | `make init-pre-commit` |
 
 ## Architecture
@@ -30,4 +32,4 @@ Python project template using **uv** (dependency manager), **black** (formatter)
 
 ## Formatting
 
-Black is the sole formatter/linter. There is no type checker (mypy/pyright) or linter (ruff/flake8) configured. CI enforces `black . --check` on every push.
+Ruff is the sole formatter and linter. There is no type checker (mypy/pyright) configured. CI enforces `ruff check .` and `ruff format --check .` on every push.

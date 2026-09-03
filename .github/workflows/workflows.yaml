@@ -17,5 +17,7 @@ jobs:
         run: uv sync --extra dev
       - name: Run tests with Pytest
         run: uv run pytest
-      - name: Run black
-        run: uv run black . --check
+      - name: Run ruff check
+        run: uv run ruff check .
+      - name: Run ruff format
+        run: uv run ruff format --check .

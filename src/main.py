@@ -1,4 +1,5 @@
 import logging
+
 from settings import settings
 
 settings.configure_logging()
