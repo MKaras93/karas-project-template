@@ -22,6 +22,9 @@ install-dependencies:
 	@which uv > /dev/null 2>&1 || (echo "Error: uv is not installed. Please run 'make install-uv-unix' (Linux/macOS) or 'make install-uv-win' (Windows)" && exit 1)
 	uv sync --extra dev
 
+test:
+	uv run pytest
+
 # example ssh access command - configure via .env file
 remote-ssh: .env
 	ssh -i $(PRIVATE_KEY_FILE_LOCATION) $(REMOTE_USER)@$(REMOTE_ADDRESS)

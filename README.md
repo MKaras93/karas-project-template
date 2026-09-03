@@ -37,5 +37,4 @@ I usually use it with PyCharm and I do the following steps to start a new projec
    - **Windows**: Run `make install-uv-win`
    - Or see https://docs.astral.sh/uv/getting-started/installation/ for alternative installation methods
 3. Run `make install-dependencies` to create a virtual environment and install dependencies (or `uv sync` directly).
-4. Create a new test configuration `pytest` and run it. There is one example test in the project - if it passed, you
-are setup correctly.
+4. Run `make test` - if it passed, you are setup correctly.

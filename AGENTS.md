@@ -9,6 +9,7 @@ Python project template using **uv** (dependency manager), **ruff** (formatter/l
 | Task | Command |
 |---|---|
 | Install dependencies | `make install-dependencies` (runs `uv sync --extra dev`) |
+| Run tests | `make test` (runs `uv run pytest`) |
 | Run all tests | `uv run pytest` |
 | Run a single test | `uv run pytest tests/test_main.py::TestExample::test_sum_numbers` |
 | Check formatting | `uv run ruff format --check .` |
