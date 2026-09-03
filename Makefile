@@ -2,10 +2,13 @@
 
 
 #  loads .env file so that env variables are available in commands
-include .env
+-include .env
 export
 
-init-pre-commit:
+.env:
+	cp .env.example .env
+
+init-pre-commit: .env
 	pip3 install pre-commit
 	pre-commit install
 
@@ -19,12 +22,15 @@ install-dependencies:
 	@which uv > /dev/null 2>&1 || (echo "Error: uv is not installed. Please run 'make install-uv-unix' (Linux/macOS) or 'make install-uv-win' (Windows)" && exit 1)
 	uv sync --extra dev
 
+test:
+	uv run pytest
+
 # example ssh access command - configure via .env file
-remote-ssh:
+remote-ssh: .env
 	ssh -i $(PRIVATE_KEY_FILE_LOCATION) $(REMOTE_USER)@$(REMOTE_ADDRESS)
 
 # example ssh deploy command - adds git deploy key to ssh agent and pulls newest version of main branch
 DEPLOY_COMMAND=cd project && ssh-agent bash -c 'ssh-add ../git-deploy-key && git pull origin main && git checkout main && git status'
-remote-deploy:
+remote-deploy: .env
 	ssh -i $(PRIVATE_KEY_FILE_LOCATION) $(REMOTE_USER)@$(REMOTE_ADDRESS) \
 	 "$(DEPLOY_COMMAND)"

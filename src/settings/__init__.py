@@ -16,11 +16,11 @@ import datetime
 import logging
 import logging.config
 import os
-from pydantic import model_validator
+
 from pydantic_settings import BaseSettings
 
 # program run timestamp, meant to be static per program run (to separate logs and outputs per run)
-TIMESTAMP: str = datetime.datetime.now().strftime("%Y%m%d_%H-%M-%S-%f")
+TIMESTAMP: str = datetime.datetime.now().astimezone().strftime("%Y%m%d_%H-%M-%S-%f")
 
 
 class Settings(BaseSettings):
@@ -62,7 +62,7 @@ class Settings(BaseSettings):
                 "class": "logging.FileHandler",
                 "filename": os.path.join(
                     current_run_logs_dir,
-                    f"debug.log",
+                    "debug.log",
                 ),
             },
             "info_file": {
@@ -71,7 +71,7 @@ class Settings(BaseSettings):
                 "class": "logging.FileHandler",
                 "filename": os.path.join(
                     current_run_logs_dir,
-                    f"info.log",
+                    "info.log",
                 ),
             },
             "current_info": {

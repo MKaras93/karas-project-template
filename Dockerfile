@@ -1,4 +1,4 @@
-FROM python:3.11-slim-buster
+FROM python:3.14-slim-buster
 WORKDIR /app
 
 # Install uv
@@ -10,4 +10,4 @@ COPY . /app
 # Install dependencies using uv
 RUN uv sync --frozen --extra dev
 
-CMD ["uv", "run", "python", "main.py"]
+CMD ["uv", "run", "python", "src/main.py"]
