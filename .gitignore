@@ -417,6 +417,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### VS Code ###
+.vscode/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,intellij,windows,macos,linux,pycharm+all
 
 # Based on https://github.com/github/gitignore/blob/main/Terraform.gitignore
