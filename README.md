@@ -3,6 +3,7 @@ without wasting too much time on it.
 
 The template includes:
 - uv as a dependency manager
+- proper `src/` package layout (`src/karas_project_template/`) with correct wheel packaging
 - tests file with a basic pytest test
 - docker-compose and Dockerfile for an image with dependencies installed via uv
 - pre-commit setup running ruff (code formatter and linter)
@@ -32,9 +33,13 @@ This is meant to be my remedy.
 # Getting started
 I usually use it with PyCharm and I do the following steps to start a new project from it:
 1. Go to `pyproject.toml` and in `[project]` change the `name` to the name of your project.
-2. Install uv if you haven't already:
+2. Rename the package directory `src/karas_project_template/` to your package name and update every
+   `karas_project_template` reference to match: imports in `src/karas_project_template/main.py`,
+   `src/karas_project_template/settings/__init__.py` and `tests/test_main.py`,
+   `packages` in `[tool.hatch.build.targets.wheel]`, and the `CMD` in `Dockerfile`.
+3. Install uv if you haven't already:
    - **Linux/macOS**: Run `make install-uv-unix`
    - **Windows**: Run `make install-uv-win`
    - Or see https://docs.astral.sh/uv/getting-started/installation/ for alternative installation methods
-3. Run `make install-dependencies` to create a virtual environment and install dependencies (or `uv sync` directly).
-4. Run `make test` - if it passed, you are setup correctly.
+4. Run `make install-dependencies` to create a virtual environment and install dependencies (or `uv sync` directly).
+5. Run `make test` - if it passed, you are setup correctly.

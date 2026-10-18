@@ -1,6 +1,6 @@
 import logging
 
-from src.settings import settings
+from karas_project_template.settings import settings
 
 settings.configure_logging()
 logger = logging.getLogger(__name__)

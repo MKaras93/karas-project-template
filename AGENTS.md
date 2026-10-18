@@ -20,9 +20,9 @@ Python project template using **uv** (dependency manager), **ruff** (formatter/l
 
 ## Architecture
 
-- **`src/`** — application code (entrypoint: `src/main.py`)
-- **`src/settings/`** — pydantic-settings config module; exports a `settings` singleton
-- **`tests/`** — pytest tests; import from `src` package (e.g. `from src.main import sum_numbers`)
+- **`src/karas_project_template/`** — application package (entrypoint: `src/karas_project_template/main.py`)
+- **`src/karas_project_template/settings/`** — pydantic-settings config module; exports a `settings` singleton
+- **`tests/`** — pytest tests; import from the `karas_project_template` package (e.g. `from karas_project_template.main import sum_numbers`)
 - **`terraform/`** — Terraform Cloud config (placeholder)
 - **`inputs/`, `outputs/`, `local/`** — data/log directories; `local/` and `inputs/local/` are gitignored
 - **`.env`** — controls env selection; must have key `env` (e.g. `env = "local"`). Copy from `.env.example`.

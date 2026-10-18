@@ -1,4 +1,4 @@
-from src.main import sum_numbers
+from karas_project_template.main import sum_numbers
 
 
 class TestExample:
