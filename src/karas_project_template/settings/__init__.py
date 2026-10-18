@@ -1,7 +1,7 @@
 """Settings module - automatically loads correct settings based on ENV variable.
 
 Usage:
-    from src.settings import settings
+    from karas_project_template.settings import settings
     print(settings.app_name)
 
     You can add more environments using the same pattern.
@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     settings_type: str = "base"
     project_root: str = os.path.dirname(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     )
     env: str = os.getenv("env", "local")
     model_config = {
